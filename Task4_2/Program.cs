@@ -1,6 +1,6 @@
-﻿// Вводится натуральное число n. Найти n! Например, 6! = 1 * 2 * 3 * 4 * 5 * 6.
+﻿// Вводится натуральное число n. Найти 1 + 1/2 + 1/3 + … + 1/n
 
-namespace Task4_1
+namespace Task4_2
 {
     internal class Program
     {
@@ -9,15 +9,15 @@ namespace Task4_1
             Console.Write("\nВведите положительное натуральное число: ");
             int number;
             bool success = int.TryParse(Console.ReadLine(), out number);
-            long factorial = 1;
+            double harmonicNumber = 0;
 
             if (success && number >= 0)
             {
-                for (int i = 2; i <= number; i++)
+                for (int i = 1; i <= number; i++)
                 {
-                    factorial *= i;
+                    harmonicNumber += 1.0 / i;
                 }
-                Console.WriteLine("Факториал числа {0} - {1}", number, factorial);
+                Console.WriteLine("Частичная сумма гармонического ряда до числа {0} - {1:F5}", number, harmonicNumber);
             }
             else
             {
