@@ -3,6 +3,5 @@
   <Project Path="Task2_2/Task2_2.csproj" Id="874c9ef1-8af7-4703-85fd-8b9bb7f08502" />
   <Project Path="Task2_3/Task2_3.csproj" Id="76629094-962b-47a5-8b3f-c506e5ece61a" />
   <Project Path="Task3_10/Task3_10.csproj" />
-  <Project Path="Task4_1/Task4_1.csproj" />
-  <Project Path="Task4_2/Task4_2.csproj" Id="d50a68e6-71b0-44a5-9431-30a8f678540f" />
+  <Project Path="Task4_2/Task4.csproj" Id="d50a68e6-71b0-44a5-9431-30a8f678540f" />
 </Solution>
