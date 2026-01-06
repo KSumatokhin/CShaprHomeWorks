@@ -47,7 +47,7 @@ namespace Task10
         {
             get
             {
-                return a == b && b == c ? true : false;
+                return a % 1 == 0 && b % 1 == 0 && c % 1 == 0;
             }
         }
     }
