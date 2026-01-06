@@ -15,21 +15,19 @@ namespace Task10
 
     class Triangle
     {
-        public double A { get; set; }
-        public double B { get; set; }
-        public double C { get; set; }
+        protected double a, b, c;
 
         public Triangle(double a, double b, double c)
         {
-            A = a;
-            B = b;
-            C = c;
+            this.a = a;
+            this.b = b;
+            this.c = c;
         }
 
         public double GetArea()
         {
-            double p = (A + B + C) / 2;
-            return Math.Sqrt(p * (p - A) * (p - B) * (p - C));
+            double p = (a + b + c) / 2;
+            return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
         }
     }
 
@@ -45,7 +43,7 @@ namespace Task10
         {
             get
             {
-                return A == B && B == C ? true : false;
+                return a == b && b == c ? true : false;
             }
         }
     }
