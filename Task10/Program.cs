@@ -24,7 +24,7 @@ namespace Task10
             this.c = c;
         }
 
-        public double GetArea()
+        public virtual double GetArea()
         {
             double p = (a + b + c) / 2;
             return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
@@ -36,7 +36,11 @@ namespace Task10
         public RectTriangle(double a, double b)
             : base(a, b, Math.Sqrt(a * a + b * b))
         {
+        }
 
+        public override double GetArea()
+        {
+            return a * b / 2;
         }
 
         public bool IsPythagorean
