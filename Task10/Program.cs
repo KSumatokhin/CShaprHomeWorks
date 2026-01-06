@@ -24,7 +24,7 @@ namespace Task10
             this.c = c;
         }
 
-        public virtual double GetArea()
+        public double GetArea()
         {
             double p = (a + b + c) / 2;
             return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
@@ -38,7 +38,7 @@ namespace Task10
         {
         }
 
-        public override double GetArea()
+        public new double GetArea()
         {
             return a * b / 2;
         }
