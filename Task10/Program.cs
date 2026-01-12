@@ -6,28 +6,60 @@ namespace Task10
     {
         static void Main(string[] args)
         {
-            RegularTriangle triangle = new RegularTriangle(10);
-            Triangle triangle1 = triangle;
-            RectTriangle triangle2 = triangle1 as RectTriangle;
+            GeometricShape[] shapes = new GeometricShape[]
+            {
+                new Triangle(3,4,5),
+                new Triangle(5,5,6),
+                new Rectangle(5,6),
+                new Rectangle(3,3)
+            };
+
+            foreach (GeometricShape shape in shapes)
+            {
+                shape.PrintInfo();
+            }
 
         }
     }
 
-    class Triangle
+    public abstract class GeometricShape
     {
-        protected double a, b, c;
+        public abstract string Name { get; }
+        public abstract double CalculateArea();
+        public abstract double CalculatePerimeter();
+
+        public void PrintInfo()
+        {
+            Console.WriteLine($"Тип {Name}");
+            Console.WriteLine($"S = {CalculateArea()}");
+            Console.WriteLine($"P = {CalculatePerimeter()}");
+            Console.WriteLine();
+        }
+    }
+
+    class Triangle : GeometricShape
+    {
+        public override string Name => "Треугольник";
+        public double SideA { get; }
+        public double SideB { get; }
+        public double SideC { get; }
 
         public Triangle(double a, double b, double c)
         {
-            this.a = a;
-            this.b = b;
-            this.c = c;
+            SideA = a;
+            SideB = b;
+            SideC = c;
         }
 
-        public double GetArea()
+        public override double CalculateArea()
         {
-            double p = (a + b + c) / 2;
-            return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+            double p = CalculatePerimeter() / 2;
+            return Math.Sqrt(p * (p - SideA) * (p - SideB) * (p - SideC));
+        }
+
+        public override double CalculatePerimeter()
+        {
+            return SideA + SideB + SideC;
         }
     }
 
@@ -38,16 +70,16 @@ namespace Task10
         {
         }
 
-        public new double GetArea()
+        public new double CalculateArea()
         {
-            return a * b / 2;
+            return SideA * SideB / 2;
         }
 
         public bool IsPythagorean
         {
             get
             {
-                return a % 1 == 0 && b % 1 == 0 && c % 1 == 0;
+                return SideA % 1 == 0 && SideB % 1 == 0 && SideC % 1 == 0;
             }
         }
     }
@@ -58,6 +90,29 @@ namespace Task10
             : base(a, a, a)
         {
 
+        }
+    }
+
+    public class Rectangle : GeometricShape
+    {
+        public override string Name => "Прямоугольник";
+        public double Width { get; }
+        public double Height { get; }
+
+        public Rectangle(double width, double height)
+        {
+            Width = width;
+            Height = height;
+        }
+
+        public override double CalculateArea()
+        {
+            return Width * Height;
+        }
+
+        public override double CalculatePerimeter()
+        {
+            return 2 * (Width + Height);
         }
     }
 }
