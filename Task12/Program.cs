@@ -8,7 +8,7 @@
                 {
                     new Product<int, decimal>("НеМолоко", 100m, 1),
                     new Product<int, decimal>("НеМолоко", 200m, 2),
-                    new Product<int, decimal>("Хлеб}", 50m, 3)
+                    new Product<int, decimal>("Хлеб", 50m, 3)
                 };
 
             Product<int, decimal> product = FindProduct<int, decimal>(products, 5);
@@ -30,6 +30,7 @@
     }
 
     class Product<T, U>
+        where U : struct
     {
         public string Name { get; set; }
         public U Price { get; set; }
