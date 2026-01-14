@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="Guess_number/Guess_number.csproj" Id="4529f00d-0824-4ab1-82df-888d4e74f9c3" />
   <Project Path="Task10/Task10.csproj" Id="f9991aee-2c64-4166-9aca-c25ca2792095" />
   <Project Path="Task10_2/Task10_2.csproj" Id="5f9947d3-f47b-4abc-8aa8-14843ee79ce8" />
   <Project Path="Task12/Task12.csproj" Id="4779c34f-b7ce-4826-9bc0-66b0490c46d0" />
