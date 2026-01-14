@@ -6,9 +6,28 @@ namespace Guess_number
     {
         static void Main(string[] args)
         {
+            bool playAgain = true;
+
+            while (playAgain)
+            {
+                PlayGame();
+
+                Console.Write("\nХотите сыграть ещё раз? (yes/no): ");
+                string answer = Console.ReadLine()?.Trim().ToLower();
+
+                playAgain = answer == "yes" || answer == "y" || answer == "да" || answer == "д";
+            }
+
+            Console.WriteLine("\nСпасибо за игру! До свидания!");
+            Console.ReadKey();
+        }
+
+        static void PlayGame()
+        {
+            Console.Clear();
             Console.WriteLine("Игра \"Угадай число\"");
             Console.WriteLine("Компьютер загадал число от 1 до 1000.");
-
+            
             Random random = new Random();
             int secret = random.Next(1, 1001);
             int attempts = 0;
@@ -33,9 +52,8 @@ namespace Guess_number
                     attempts--;
                     continue;
                 }
-                
 
-                if (number == secret) 
+                if (number == secret)
                 {
                     guessed = true;
                     Console.WriteLine($"\nПоздравляем! Вы угадали число {secret} за {attempts} попыток!");
@@ -48,7 +66,6 @@ namespace Guess_number
                 {
                     Console.WriteLine("Загаданное число МЕНЬШЕ.");
                 }
-
             }
         }
     }
