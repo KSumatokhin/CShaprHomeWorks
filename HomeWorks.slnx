@@ -1,4 +1,6 @@
 <Solution>
+  <Project Path="Atbash_cipher/Atbash_cipher.csproj" Id="2589f380-0d05-4e2f-9d29-19008856759b" />
+  <Project Path="Battle_monster/Battle_monster.csproj" Id="f953b3c6-88da-4ba3-b489-b086dd991fd6" />
   <Project Path="Guess_number/Guess_number.csproj" Id="4529f00d-0824-4ab1-82df-888d4e74f9c3" />
   <Project Path="Task10/Task10.csproj" Id="f9991aee-2c64-4166-9aca-c25ca2792095" />
   <Project Path="Task10_2/Task10_2.csproj" Id="5f9947d3-f47b-4abc-8aa8-14843ee79ce8" />

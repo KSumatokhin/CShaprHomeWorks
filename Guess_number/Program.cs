@@ -12,7 +12,7 @@ namespace Guess_number
             {
                 PlayGame();
 
-                Console.Write("\nХотите сыграть ещё раз? (yes/no): ");
+                Console.Write("\nХотите сыграть ещё раз? (Yes/No) <No>: ");
                 string answer = Console.ReadLine()?.Trim().ToLower();
 
                 playAgain = answer == "yes" || answer == "y" || answer == "да" || answer == "д";
